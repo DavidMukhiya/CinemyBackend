@@ -2,9 +2,9 @@ package com.example.cinemyspring.Entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="tbl_movies")
+@Table(name="tbl_cinemy")
 public class Movie {
-
+    @Id
     private int id;
     private String name;
     private String image;
