@@ -16,19 +16,20 @@ public class MovieServiceImpl implements MovieService {
     MovieDao movieDao;
 
     @Override
-    public List<Movie> getAllMovies() {
+    public List<Movie> getAllMovie() {
         return this.movieDao.findAll();
     }
 
     @Override
-    public Movie getMovieByID(int id) {
-        Optional<Movie> m = this.movieDao.findById(id);
+    public Movie getMovieByID(int movieID) {
+        Optional<Movie> mov = this.movieDao.findById(movieID);
         Movie movie = null;
-        if(m.isPresent()){
-            movie = m.get();
-        }else {
-            throw new RuntimeException("Movie not found for id :: " + id);
+        if(mov.isPresent()){
+            movie = mov.get();
+        }else{
+            throw new RuntimeException("Movie is not found");
         }
+
         return movie;
     }
 
@@ -43,15 +44,8 @@ public class MovieServiceImpl implements MovieService {
     }
 
     @Override
-    public String deleteMovie(int id) {
-        Optional<Movie> m = this.movieDao.findById(id);
-        Movie movie = null;
-        if(m.isPresent()){
-            movie = m.get();
-            this.movieDao.delete(movie);
-        }else {
-            throw new RuntimeException("Movie not found for id :: " + id);
-        }
-        return "Delete Successful";
+    public String deleteMovie(int movieID) {
+        this.movieDao.deleteById(movieID);
+        return "Movie with ID: "+movieID+ " is deleted Successfully.";
     }
 }

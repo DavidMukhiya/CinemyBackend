@@ -5,14 +5,14 @@ import com.example.cinemyspring.Entity.Movie;
 import java.util.List;
 
 public interface MovieService {
-    List<Movie> getAllMovies();
+    List<Movie> getAllMovie();
 
-    Movie getMovieByID(int id);
+    Movie getMovieByID(int ID);
 
     Movie addMovie(Movie movie);
 
     Movie updateMovie(Movie movie);
 
-    String deleteMovie(int id);
+    String deleteMovie(int ID);
 
 }
