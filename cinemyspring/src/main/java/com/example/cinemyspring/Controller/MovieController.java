@@ -3,6 +3,7 @@ package com.example.cinemyspring.Controller;
 import com.example.cinemyspring.Entity.Movie;
 import com.example.cinemyspring.Service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,8 +18,13 @@ public class MovieController {
         return this.movieService.getAllMovie();
     }
 
+//    @GetMapping("/movies/{movieID}")
+//    public Movie getMovieByID(@PathVariable String movieID){
+//        return this.movieService.getMovieByID(Integer.parseInt(movieID));
+//    }
+
     @GetMapping("/movies/{movieID}")
-    public Movie getMovieByID(@PathVariable String movieID){
+    public ResponseEntity<Movie> getMovieByID(@PathVariable String movieID){
         return this.movieService.getMovieByID(Integer.parseInt(movieID));
     }
 
@@ -27,9 +33,14 @@ public class MovieController {
         return this.movieService.addMovie(movie);
     }
 
-    @PutMapping("/movies")
-    public Movie updateMovie(@RequestBody Movie movie){
-        return this.movieService.updateMovie(movie);
+//    @PutMapping("/movies")
+//    public Movie updateMovie(@RequestBody Movie movie){
+//        return this.movieService.updateMovie(movie);
+//    }
+
+    @PutMapping("/movies/{movieID}")
+    public ResponseEntity<Movie> updateMovie(@PathVariable int movieID, @RequestBody Movie movie){
+        return this.movieService.updateMovie(movieID, movie);
     }
 
     @DeleteMapping("/movies/{movieID}")
