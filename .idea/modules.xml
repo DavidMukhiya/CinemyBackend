@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/CinemyBackend.iml" filepath="$PROJECT_DIR$/.idea/CinemyBackend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cinemyspring/cinemyspring.iml" filepath="$PROJECT_DIR$/cinemyspring/cinemyspring.iml" />
     </modules>
   </component>
 </project>
