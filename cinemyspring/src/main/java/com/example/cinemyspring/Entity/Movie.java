@@ -58,7 +58,7 @@ public class Movie {
         return isMovie;
     }
 
-    public void setMovie(boolean movie) {
+    public void setIsMovie(boolean movie) {
         isMovie = movie;
     }
 }

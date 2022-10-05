@@ -52,7 +52,7 @@ public class MovieServiceImpl implements MovieService {
         updateMovie.setName(movie.getName());
         updateMovie.setDescription(movie.getDescription());
         updateMovie.setImage(movie.getImage());
-        updateMovie.setMovie(movie.isMovie());
+        updateMovie.setIsMovie(movie.isMovie());
         movieDao.save(updateMovie);
 
         return ResponseEntity.ok(updateMovie);
